@@ -1,6 +1,6 @@
 package com.crm.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,7 +32,7 @@ public class Activity
 	private String notes;
 
 	@Column(name = "due_date")
-	private Date dueDate;
+	private LocalDate dueDate;
 
 	@Column(name = "activity_type")
 	private String activityType;
@@ -69,11 +69,11 @@ public class Activity
 		this.notes = notes;
 	}
 
-	public Date getDueDate() {
+	public LocalDate getDueDate() {
 		return dueDate;
 	}
 
-	public void setDueDate( Date dueDate ) {
+	public void setDueDate( LocalDate dueDate ) {
 		this.dueDate = dueDate;
 	}
 

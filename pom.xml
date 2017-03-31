@@ -13,7 +13,8 @@
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
 		<slf4j.version>1.7.5</slf4j.version>
-		<hibernate.version>4.3.5.Final</hibernate.version>
+		<hibernate.version>5.2.0.Final</hibernate.version>
+		<hibernate.em.version>5.1.0.Final</hibernate.em.version>
 	</properties>
 
 	<dependencies>
@@ -78,7 +79,7 @@
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
+			<version>${hibernate.em.version}</version>
 		</dependency>
 
         <!-- MySQL database driver -->

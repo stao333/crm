@@ -1,5 +1,6 @@
 package com.crm.web.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class JsonActivity
@@ -10,7 +11,7 @@ public class JsonActivity
 	private String contactName;
 	private String title;
 	private String notes;
-	private Date dueDate;
+	private LocalDate dueDate;
 
 	public Integer getActivityId() {
 		return activityId;
@@ -61,10 +62,11 @@ public class JsonActivity
 	}
 
 	public Date getDueDate() {
-		return dueDate;
+		Date date = java.sql.Date.valueOf( dueDate );
+		return date;
 	}
 
-	public void setDueDate( Date dueDate ) {
+	public void setDueDate( LocalDate dueDate ) {
 		this.dueDate = dueDate;
 	}
 

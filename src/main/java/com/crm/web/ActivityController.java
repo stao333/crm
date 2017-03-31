@@ -3,8 +3,9 @@ package com.crm.web;
 import static com.crm.util.JsonUtil.convertToJson;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -144,12 +145,8 @@ public class ActivityController
 		webDataBinder.registerCustomEditor( Date.class, new CustomDateEditor( dateFormat, false ) );
 	}
 
-	private Date convertToDate( String dateStr ) {
-		DateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd" );
-		try {
-			return dateFormat.parse( dateStr );
-		} catch( ParseException e ) {
-			return null;
-		}
+	private LocalDate convertToDate( String dateStr ) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "yyyy-MM-dd" );
+		return LocalDate.parse( dateStr, formatter );
 	}
 }
