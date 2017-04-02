@@ -1,5 +1,8 @@
 /target/
 
+.idea/
+contact-management.iml
+
 .classpath
 .project
 .settings/
